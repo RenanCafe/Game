@@ -1,5 +1,126 @@
-ul {
-  list-style-type: none;
+/* Reset básico */
+body, h1, p, ul, li, a, button, footer {
   margin: 0;
   padding: 0;
-} 
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Fundo vibrante com gradiente animado */
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ff6f00, #ff0080, #00c3ff, #00ff94);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: #fff;
+  padding: 24px;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Título */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px #0008;
+}
+
+/* Parágrafos */
+p {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Menu de navegação */
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #ff0080, #7928ca);
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  box-shadow: 0 2px 8px #0003;
+}
+
+ul li a:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #00c3ff, #ff6f00);
+  box-shadow: 0 4px 16px #0005;
+}
+
+/* Botão dinâmico */
+button {
+  display: block;
+  margin: 24px auto;
+  padding: 14px 36px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #00ff94, #00c3ff);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0004;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff0080, #ff6f00);
+  transform: scale(1.05);
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #ff0080;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 40px;
+  padding: 24px 0 0 0;
+  text-align: center;
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -2px 12px #0002;
+  font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+  ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+  body {
+    padding: 8px;
+  }
+}
